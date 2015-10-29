@@ -1,0 +1,91 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+body {
+    margin: 0 0 100px;
+    padding: 25px;
+}
+
+#max{
+  display: none;
+}
+
+.black_overlay
+{
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	z-index:1001;
+	-moz-opacity: 0.8;
+	opacity:.80;
+	filter: alpha(opacity=80);
+  -webkit-animation-name: "minimizebackground";
+}
+
+.white_content
+{
+	position: absolute;
+	top: 25%;
+	left: 25%;
+	width: 50%;
+	height: 50%;
+	padding: 16px;
+	border: 16px solid orange;
+	background-color: white;
+	z-index:1002;
+	overflow: auto;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes minimize {
+    to
+    {
+      position: fixed;
+      top: 90%;
+    	left: 90%;
+    	width: 4%;
+    	height: 3%;
+    	padding: 16px;
+    	border: none;
+    	background-color: orange;
+    	z-index:1002;
+    	overflow: auto;
+      bottom: 0;
+    }
+}
+
+@keyframes maximize {
+    from
+    {
+      position: fixed;
+      top: 90%;
+      left: 90%;
+      width: 4%;
+      height: 3%;
+      padding: 16px;
+      border: none;
+      background-color: orange;
+      z-index:1002;
+      overflow: auto;
+      bottom: 0;
+    }
+
+    to
+    {
+      position: absolute;
+    	top: 25%;
+    	left: 25%;
+    	width: 50%;
+    	height: 50%;
+    	padding: 16px;
+    	border: 16px solid orange;
+    	background-color: white;
+    	z-index:1002;
+    	overflow: auto;
+    }
+}
